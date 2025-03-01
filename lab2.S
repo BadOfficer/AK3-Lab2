@@ -31,9 +31,9 @@ calculate_func_2:
 	pop {pc}
 
 calculate_facto:
-	cmp r2, #0
-	bne skip
-	mov r2, #1
+	cmp r2, #0 // compare C with 0
+	bne skip // if not equal go to skip
+	mov r2, #1 // if C = 0 then C! = 1
 	skip:
 	mul r5, r2 // r5 = r5 * r2
 	sub r2, #1 // r2 = r2 - 1
