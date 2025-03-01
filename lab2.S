@@ -13,10 +13,10 @@ lab2:
 	cmp r2, #0 // compare C with 0
 	blt c_less_than_0 // if C < 0 go to c_less_than_0
 	mov r5, #1 // r5 = 1
-	bl calculate_facto // calc
+	bl calculate_facto // calculate c!
 	cmp r5, #12 // compare A * B with 12
-	bgt calculate_func_1 // if A * B >= 12, then go to calculate_func_1
-	ble calculate_func_2 // if A * B < 12, then go to calculate_func_2
+	bgt calculate_func_1 // if A * B > 12, then go to calculate_func_1
+	ble calculate_func_2 // if A * B <= 12, then go to calculate_func_2
 
 calculate_func_1:
 	and r4, r0, r1 // r4 = A & B
@@ -34,7 +34,7 @@ calculate_facto:
 	mul r5, r2 // r5 = r5 * r2
 	sub r2, #1 // r2 = r2 - 1
 	cmp r2, #1 // compare r2 with 1
-	bgt calculate_facto // if r2 >= 1, then go to start calculate_facto
+	bgt calculate_facto // if r2 > 1, then go to start calculate_facto
 	bx lr
 
 c_less_than_0:
